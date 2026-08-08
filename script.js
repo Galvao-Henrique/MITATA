@@ -7,7 +7,7 @@
    --------------------------------------------------------------------- */
 const CONFIG = {
   // Número de WhatsApp com código do país (DDI 55) + DDD, apenas números.
-  whatsappNumber: '5512999999999',
+  whatsappNumber: '5512997052003',
   whatsappMessage: 'Olá! Vim pelo site e gostaria de saber mais sobre os cortes disponíveis.',
 };
 
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   initHeroParallax();
   initProductFilters();
-  initContactForm();
   initFloatingWhatsapp();
   initFooterYear();
 });
@@ -230,38 +229,6 @@ function initProductFilters() {
 
       if (emptyState) emptyState.hidden = visibleCount > 0;
     });
-  });
-}
-
-/* ---------------------------------------------------------------------
-   FORMULÁRIO DE CONTATO (apenas visual — sem backend)
-   Para conectar a um backend real, substitua o bloco dentro do listener
-   por uma chamada fetch() para o seu endpoint / serviço de e-mail.
-   --------------------------------------------------------------------- */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const note = document.getElementById('formNote');
-  if (!form || !note) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const submitBtn = form.querySelector('.form-submit');
-    const label = form.querySelector('.form-submit__label');
-    const originalLabel = label.textContent;
-
-    submitBtn.disabled = true;
-    label.textContent = 'Enviando...';
-
-    // Simulação de envio — substitua por integração real (fetch/EmailJS/Formspree etc.)
-    setTimeout(() => {
-      note.textContent = 'Mensagem recebida! Em breve entraremos em contato.';
-      label.textContent = originalLabel;
-      submitBtn.disabled = false;
-      form.reset();
-
-      setTimeout(() => { note.textContent = ''; }, 6000);
-    }, 900);
   });
 }
 
