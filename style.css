@@ -928,8 +928,6 @@ section { position: relative; }
 @media (max-width: 620px) {
   .contact-info ul { grid-template-columns: 1fr; }
 
-  .header__actions .icon-link:first-child { display: none; }
-
   .hero__content { padding-top: 4.5rem; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { justify-content: center; }
