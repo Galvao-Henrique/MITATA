@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitata Alimentos | Carnes Premium Selecionadas</title>
+<meta name="description" content="Cortes selecionados, qualidade incomparável. Carnes premium para o seu churrasco, direto para a sua mesa. Peça pelo WhatsApp.">
+<meta name="keywords" content="carnes premium, açougue premium, picanha, carnes selecionadas, churrasco, carnes nobres, açougue online">
+<meta name="theme-color" content="#050505">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mitata Alimentos | Carnes Premium Selecionadas">
+<meta property="og:description" content="Cortes selecionados, qualidade incomparável e o cuidado que transforma cada refeição em uma experiência.">
+<meta property="og:image" content="https://api.sourcesplash.com/i/random?q=beef%20steak&w=1600&h=1100">
+
+<!-- Favicon com a marca real da Mitata Alimentos -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- Google Fonts: Cormorant Garamond (display) + Montserrat (corpo/UI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Phosphor Icons -->
+<script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sprite SVG: marca registrada (elemento de assinatura em forma de "marca de brasa") -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="sear-mark" viewBox="0 0 32 32">
+    <line x1="4" y1="27" x2="15" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="12" y1="29" x2="23" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="20" y1="31" x2="29" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<!-- =================== HEADER =================== -->
+<header class="header" id="header">
+  <div class="header__inner container">
+    <a href="#inicio" class="logo" aria-label="Mitata Alimentos - Início">
+      <img src="image/mitata1.png" alt="Mitata Alimentos" class="logo__img">
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio" class="nav__link">Início</a></li>
+        <li><a href="#carnes" class="nav__link">Nossas Carnes</a></li>
+        <li><a href="#categorias" class="nav__link">Categorias</a></li>
+        <li><a href="#sobre" class="nav__link">Sobre</a></li>
+        <li><a href="#contato" class="nav__link">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="icon-link" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="#" data-whatsapp class="icon-link" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+      <a href="#contato" class="btn btn-outline btn-sm">Fale Conosco</a>
+    </div>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#carnes">Nossas Carnes</a></li>
+      <li><a href="#categorias">Categorias</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="mobile-menu__social">
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="#" data-whatsapp aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="inicio">
+  <div class="hero__bg">
+    <!-- SUBSTITUA por fotografia profissional de corte bovino premium sobre superfície escura -->
+    <img id="heroImg" src="Image/banner1.jpg" alt="Corte bovino premium com iluminação cinematográfica sobre superfície escura" loading="eager" fetchpriority="high">
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content container">
+    <span class="eyebrow" data-reveal>
+      <svg class="eyebrow__mark"><use href="#sear-mark"/></svg>
+      Qualidade Selecionada
+    </span>
+    <h1 class="hero__title" data-reveal data-reveal-delay="1">A ARTE<br>DE ESCOLHER<br>UM BOM CORTE</h1>
+    <p class="hero__subtitle" data-reveal data-reveal-delay="2">Cortes selecionados, qualidade incomparável e o cuidado que transforma cada refeição em uma experiência.</p>
+
+    <div class="hero__actions" data-reveal data-reveal-delay="3">
+      <a href="#carnes" class="btn btn-gold">Conheça Nossas Carnes</a>
+      <a href="#" data-whatsapp class="btn btn-outline">Falar no WhatsApp</a>
+    </div>
+
+    <ul class="hero__trust" data-reveal data-reveal-delay="3">
+      <li>Cortes selecionados</li>
+      <li>Qualidade garantida</li>
+      <li>Atendimento especializado</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =================== CATEGORIAS =================== -->
+<section class="categories" id="categorias">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Nossos Cortes</span>
+      <h2 class="section-title">Seleção para<br>Todos os Momentos</h2>
+      <p class="section-text">Do churrasco de domingo às ocasiões especiais, encontre cortes selecionados para transformar cada refeição.</p>
+    </div>
+
+    <div class="category-grid">
+      <a href="#carnes" class="category-card" data-filter-target="bovinos" data-reveal>
+        <div class="category-card__image">
+          <img src="image/bovino.jpg" alt="Cortes bovinos selecionados" loading="lazy">
+        </div>
+        <div class="category-card__overlay"></div>
+        <div class="category-card__content">
+          <h3>Bovinos</h3>
+          <p>Cortes selecionados</p>
+          <span class="card-arrow">Ver cortes <i class="ph ph-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="#carnes" class="category-card" data-filter-target="suinos" data-reveal>
+        <div class="category-card__image">
+          <img src="image/suino.jpg" alt="Cortes suínos selecionados" loading="lazy">
+        </div>
+        <div class="category-card__overlay"></div>
+        <div class="category-card__content">
+          <h3>Suínos</h3>
+          <p>Maciez e sabor em cada peça</p>
+          <span class="card-arrow">Ver cortes <i class="ph ph-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="#carnes" class="category-card" data-filter-target="aves" data-reveal>
+        <div class="category-card__image">
+          <img src="Image/ave.jpg" alt="Aves selecionadas" loading="lazy">
+        </div>
+        <div class="category-card__overlay"></div>
+        <div class="category-card__content">
+          <h3>Aves</h3>
+          <p>Leveza para o dia a dia</p>
+          <span class="card-arrow">Ver cortes <i class="ph ph-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="#carnes" class="category-card" data-filter-target="linguicas" data-reveal>
+        <div class="category-card__image">
+          <img src="Image/linguica.jpg" alt="Linguiças artesanais" loading="lazy">
+        </div>
+        <div class="category-card__overlay"></div>
+        <div class="category-card__content">
+          <h3>Linguiças</h3>
+          <p>Receita artesanal, tempero autêntico</p>
+          <span class="card-arrow">Ver cortes <i class="ph ph-arrow-right"></i></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== NOSSAS CARNES (PRODUTOS + FILTRO) =================== -->
+<section class="products" id="carnes">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Nossas Carnes</span>
+      <h2 class="section-title">Os Melhores Cortes,<br>Selecionados Para Você</h2>
+    </div>
+
+    <div class="filters" data-reveal role="tablist" aria-label="Filtrar cortes por categoria">
+      <button class="filter-btn is-active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="bovinos">Bovinos</button>
+      <button class="filter-btn" data-filter="suinos">Suínos</button>
+      <button class="filter-btn" data-filter="aves">Aves</button>
+      <button class="filter-btn" data-filter="linguicas">Linguiças</button>
+    </div>
+
+        <ul class="products-grid" id="productsGrid">
+
+      <li class="product-card product-card--featured" data-category="bovinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Bovino Com Osso</span>
+          <h3>Boi Casado</h3>
+          <p>R$ 24,40/kg</p>
+          <span class="product-card__badge">Mais Pedido</span>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="bovinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Bovino Com Osso</span>
+          <h3>Dianteiro de Boi</h3>
+          <p>R$ 21,20/kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="bovinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Bovino Com Osso</span>
+          <h3>PA de Boi</h3>
+          <p>R$ 21,00/kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="bovinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Bovino Com Osso</span>
+          <h3>Traseiro de Boi</h3>
+          <p>R$ 27,60/kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="bovinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Miudo Bovino</span>
+          <h3>Fígado de Bovino</h3>
+          <p>R$ 13,50/kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="bovinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Miudo Bovino</span>
+          <h3>Língua Bovina</h3>
+          <p>R$ 13,00/kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="bovinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Miudo Bovino</span>
+          <h3>Rumem de Bovino</h3>
+          <p>R$ 15,00/kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="suinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Suíno Com Osso</span>
+          <h3>Costelinha Suína</h3>
+          <p>R$ 18,30/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="suinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Suíno Com Osso</span>
+          <h3>Metade Suína</h3>
+          <p>R$ 8,50/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="suinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Suíno Com Osso</span>
+          <h3>Pernil Suíno Com Pele e Com Osso
+          </h3>
+          <p>R$ 13,80/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="suinos" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Suíno Com Osso</span>
+          <h3>Pé Suíno</h3>
+          <p>R$ 8,50/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="suinos" data-reveal>
+       <div class="product-card__info">
+          <span class="product-card__category">Suíno Sem Osso</span>
+          <h3>Barriga Suína</h3>
+          <p>R$ 18,30/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+    <li class="product-card" data-category="suinos" data-reveal>
+      <div class="product-card__info">
+          <span class="product-card__category">Suíno Sem Osso</span>
+          <h3>Pernil Suíno Sem Pele e Sem Osso</h3>
+          <p>R$ 14,30/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+      
+      <li class="product-card" data-category="suinos" data-reveal>
+      <div class="product-card__info">
+          <span class="product-card__category">Suíno Sem Osso</span>
+          <h3>Toucino Lombar Com Pele</h3>
+          <p>R$ 15,20/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Asa de Frango</h3>
+          <p>R$ 13,50/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Coxa Com Sobrecoxa</h3>
+          <p>R$ 8,80/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Coxinha da Asa</h3>
+          <p>R$ 11,00/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Filé de Peito de Frango</h3>
+          <p>R$ 15,00/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Filé de Peito de Frango Empanado</h3>
+          <p>R$ 23,23/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Moela</h3>
+          <p>R$ 14,80/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Nuggets de Frango</h3>
+          <p>R$ 18,59/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="aves" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Aves</span>
+          <h3>Peito de Frango Com Osso</h3>
+          <p>R$ 12,40/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="linguicas" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Linguiça</span>
+          <h3>Linguiça Toscana Aurora</h3>
+          <p>R$ 19,90/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+      <li class="product-card" data-category="linguicas" data-reveal>
+        <div class="product-card__info">
+          <span class="product-card__category">Linguiça</span>
+          <h3>Linguiça Toscana Sadia</h3>
+          <p>R$ 16,90/Kg</p>
+        </div>
+        <a href="#" data-whatsapp class="product-link">Ver Corte <span>→</span></a>
+      </li>
+
+    </ul>
+
+    <p class="products-empty" id="productsEmpty" hidden>Nenhum corte encontrado nesta categoria no momento.</p>
+  </div>
+</section>
+
+<!-- =================== SEÇÃO DE DESTAQUE (CONFIANÇA) =================== -->
+<section class="trust">
+  <div class="container trust__grid">
+    <div class="trust__image" data-reveal data-reveal="scale">
+      <!-- SUBSTITUA por foto do preparo/seleção das carnes -->
+      <img src="image/boi.jpg" alt="Seleção criteriosa de carnes premium" loading="lazy">
+    </div>
+    <div class="trust__content">
+      <span class="eyebrow" data-reveal><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Nosso Compromisso</span>
+      <h2 class="section-title" data-reveal>Qualidade Que<br>Você Pode Confiar</h2>
+      <p class="section-text" data-reveal>Da seleção do corte até a sua mesa, cuidamos de cada detalhe para entregar carnes de qualidade, frescas e selecionadas.</p>
+      <span class="divider-gold" data-reveal></span>
+      <ul class="checklist" data-reveal>
+        <li><i class="ph ph-check"></i> Seleção Criteriosa</li>
+        <li><i class="ph ph-check"></i> Armazenamento Adequado</li>
+        <li><i class="ph ph-check"></i> Qualidade Garantida</li>
+        <li><i class="ph ph-check"></i> Atendimento Especializado</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =================== EXPERIÊNCIA / CHURRASCO =================== -->
+<section class="experience">
+  <div class="container experience__grid">
+    <div class="experience__content">
+      <span class="eyebrow" data-reveal><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Mais Que Carne</span>
+      <h2 class="section-title" data-reveal>O Seu Churrasco<br>Começa Com Uma<br>Boa Escolha.</h2>
+      <p class="section-text" data-reveal>Seja para aquele churrasco de domingo, uma ocasião especial ou simplesmente para deixar a refeição do dia ainda melhor, temos o corte certo para cada momento.</p>
+      <a href="#carnes" class="btn btn-gold" data-reveal>Encontre Seu Corte</a>
+    </div>
+    <div class="experience__image" data-reveal data-reveal="scale">
+      <!-- SUBSTITUA por foto de churrasco premium da sua marca -->
+      <img src="https://api.sourcesplash.com/i/random?q=barbecue%20grill&w=1300&h=950" alt="Churrasco premium sendo preparado na brasa" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- =================== SOBRE / ESSÊNCIA =================== -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about__head" data-reveal>
+      <span class="eyebrow"><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Nossa Essência</span>
+      <h2 class="section-title">Tradição, Qualidade e<br>Confiança em Cada Escolha.</h2>
+      <p class="section-text">Mais do que vender carnes, o nosso objetivo é oferecer produtos de qualidade e construir uma relação de confiança com cada cliente — do primeiro pedido ao próximo churrasco.</p>
+    </div>
+
+    <div class="stats" data-reveal>
+      <div class="stat">
+        <span class="stat__number"><span data-counter="10" data-prefix="+">0</span></span>
+        <span class="stat__label">Anos de Experiência</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number"><span data-counter="50" data-prefix="+">0</span></span>
+        <span class="stat__label">Cortes Disponíveis</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number"><span data-counter="1000" data-prefix="+">0</span></span>
+        <span class="stat__label">Clientes Atendidos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== COMO COMPRAR =================== -->
+<section class="steps">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Como Comprar</span>
+      <h2 class="section-title">Simples, Rápido e<br>Sem Complicação</h2>
+    </div>
+
+    <div class="steps__grid">
+      <div class="step" data-reveal>
+        <span class="step__number">01</span>
+        <i class="ph ph-magnifying-glass step__icon"></i>
+        <h3>Escolha seu Corte</h3>
+        <p>Navegue pelas categorias e encontre o corte ideal para o seu momento.</p>
+      </div>
+      <div class="step" data-reveal data-reveal-delay="1">
+        <span class="step__number">02</span>
+        <i class="ph ph-whatsapp-logo step__icon"></i>
+        <h3>Faça seu Pedido</h3>
+        <p>Fale com a gente pelo WhatsApp e finalize o seu pedido com facilidade.</p>
+      </div>
+      <div class="step" data-reveal data-reveal-delay="2">
+        <span class="step__number">03</span>
+        <i class="ph ph-package step__icon"></i>
+        <h3>Receba ou Retire</h3>
+        <p>Combine a entrega ou retire pessoalmente, como for mais conveniente.</p>
+      </div>
+      <div class="step" data-reveal data-reveal-delay="3">
+        <span class="step__number">04</span>
+        <i class="ph ph-fire step__icon"></i>
+        <h3>Prepare e Aproveite</h3>
+        <p>Leve à mesa um resultado que só uma boa carne proporciona.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHATSAPP CTA =================== -->
+<section class="whatsapp-cta">
+  <div class="container">
+    <span class="eyebrow" data-reveal><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Fale Conosco Agora</span>
+    <h2 class="whatsapp-cta__title" data-reveal>VAI TER<br>CHURRASCO?</h2>
+    <p data-reveal>Nós temos a carne. Você só precisa chamar os amigos.</p>
+    <a href="#" data-whatsapp class="btn btn-gold btn-lg" data-reveal>Fazer Pedido Pelo WhatsApp <i class="ph ph-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- =================== CONTATO =================== -->
+<section class="contact" id="contato">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Fale Conosco</span>
+      <h2 class="section-title">Vamos Conversar Sobre<br>o Seu Próximo Pedido</h2>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact-info" data-reveal>
+        <ul>
+          <li>
+            <i class="ph ph-whatsapp-logo"></i>
+            <div><span>WhatsApp</span><a href="#" data-whatsapp>(12) 99999-9999</a></div>
+          </li>
+          <li>
+            <i class="ph ph-phone"></i>
+            <div><span>Telefone</span><a href="tel:+551239999999">(12) 3999-9999</a></div>
+          </li>
+          <li>
+            <i class="ph ph-instagram-logo"></i>
+            <div><span>Instagram</span><a href="https://instagram.com" target="_blank" rel="noopener">@mitata.alimentos</a></div>
+          </li>
+          <li>
+            <i class="ph ph-map-pin"></i>
+            <div><span>Endereço</span><a href="#">Av. das Carnes, 1234 – São José dos Campos, SP</a></div>
+          </li>
+          <li>
+            <i class="ph ph-clock"></i>
+            <div><span>Horário</span><p>Seg. a Sáb. — 8h às 19h</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm" data-reveal>
+        <div class="form-group">
+          <label for="fname">Nome</label>
+          <input type="text" id="fname" name="name" placeholder="Seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label for="fphone">Telefone</label>
+          <input type="tel" id="fphone" name="phone" placeholder="(00) 00000-0000" required>
+        </div>
+        <div class="form-group">
+          <label for="fmessage">Mensagem</label>
+          <textarea id="fmessage" name="message" rows="4" placeholder="Conte um pouco sobre o que você precisa" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold form-submit">
+          <span class="form-submit__label">Enviar Mensagem</span>
+        </button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =================== INSTAGRAM =================== -->
+<section class="instagram">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><svg class="eyebrow__mark"><use href="#sear-mark"/></svg>Acompanhe a Nossa Marca</span>
+      <h2 class="section-title">@mitata.alimentos</h2>
+    </div>
+
+    <div class="instagram-grid">
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-item" data-reveal>
+        <img src="https://api.sourcesplash.com/i/random?q=grilled%20meat&w=500&h=500" alt="Carne grelhada" loading="lazy">
+        <span><i class="ph ph-instagram-logo"></i></span>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-item" data-reveal>
+        <img src="https://api.sourcesplash.com/i/random?q=churrasco%20brazil&w=500&h=500" alt="Churrasco" loading="lazy">
+        <span><i class="ph ph-instagram-logo"></i></span>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-item" data-reveal>
+        <img src="https://api.sourcesplash.com/i/random?q=steak%20dinner&w=500&h=500" alt="Prato com carne premium" loading="lazy">
+        <span><i class="ph ph-instagram-logo"></i></span>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-item" data-reveal>
+        <img src="https://api.sourcesplash.com/i/random?q=butcher%20shop&w=500&h=500" alt="Seleção de cortes" loading="lazy">
+        <span><i class="ph ph-instagram-logo"></i></span>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-item" data-reveal>
+        <img src="https://api.sourcesplash.com/i/random?q=grill%20fire&w=500&h=500" alt="Preparo na brasa" loading="lazy">
+        <span><i class="ph ph-instagram-logo"></i></span>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-item" data-reveal>
+        <img src="https://api.sourcesplash.com/i/random?q=meat%20platter&w=500&h=500" alt="Tábua de carnes" loading="lazy">
+        <span><i class="ph ph-instagram-logo"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#inicio" class="logo">
+        <img src="Image/mitata1.png" alt="Mitata Alimentos" class="logo__img">
+      </a>
+      <p>Qualidade selecionada para quem valoriza o sabor.</p>
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+        <a href="#" data-whatsapp aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__links">
+      <h4>Navegação</h4>
+      <a href="#inicio">Início</a>
+      <a href="#carnes">Carnes</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </div>
+
+    <div class="footer__links">
+      <h4>Contato</h4>
+      <a href="#" data-whatsapp>(12) 99999-9999</a>
+      <a href="tel:+551239999999">(12) 3999-9999</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">@mitata.alimentos</a>
+    </div>
+  </div>
+
+  <span class="divider-gold footer__divider"></span>
+
+  <div class="container footer__bottom">
+    <p>© <span id="year"></span> Mitata Alimentos. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Botão flutuante do WhatsApp -->
+<a href="#" data-whatsapp class="float-whatsapp" id="floatWhatsapp" aria-label="Falar no WhatsApp">
+  <i class="ph ph-whatsapp-logo"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
