@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initActiveNav();
   initHeroParallax();
-  initProductFilters();
+  initProductCatalog();
   initFloatingWhatsapp();
   initFooterYear();
 });
@@ -206,30 +206,95 @@ function initHeroParallax() {
 }
 
 /* ---------------------------------------------------------------------
-   FILTRO DE PRODUTOS POR CATEGORIA
+   CATÁLOGO DE CORTES — filtro por categoria + paginação
+   Ajuste PRODUCTS_PER_PAGE para mudar quantos cortes aparecem por página.
    --------------------------------------------------------------------- */
-function initProductFilters() {
+const PRODUCTS_PER_PAGE = 8;
+let catalogFilter = 'todos';
+let catalogPage = 1;
+
+function initProductCatalog() {
   const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.product-card');
-  const emptyState = document.getElementById('productsEmpty');
-  if (!buttons.length || !cards.length) return;
+  const grid = document.getElementById('productsGrid');
+  if (!grid) return;
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
+      if (btn.classList.contains('is-active')) return;
       buttons.forEach((b) => b.classList.toggle('is-active', b === btn));
-
-      let visibleCount = 0;
-      cards.forEach((card) => {
-        const matches = filter === 'todos' || card.dataset.category === filter;
-        card.classList.toggle('is-hidden-filter', !matches);
-        if (matches) visibleCount++;
-      });
-
-      if (emptyState) emptyState.hidden = visibleCount > 0;
+      catalogFilter = btn.dataset.filter;
+      catalogPage = 1;
+      renderProductCatalog();
     });
   });
+
+  renderProductCatalog();
+}
+
+function renderProductCatalog() {
+  const grid = document.getElementById('productsGrid');
+  const emptyState = document.getElementById('productsEmpty');
+  if (!grid) return;
+
+  const allCards = Array.from(grid.querySelectorAll('.product-card'));
+  const filtered = allCards.filter(
+    (card) => catalogFilter === 'todos' || card.dataset.category === catalogFilter
+  );
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PRODUCTS_PER_PAGE));
+  if (catalogPage > totalPages) catalogPage = totalPages;
+
+  const start = (catalogPage - 1) * PRODUCTS_PER_PAGE;
+  const visiblePage = new Set(filtered.slice(start, start + PRODUCTS_PER_PAGE));
+
+  grid.classList.add('is-transitioning');
+
+  window.setTimeout(() => {
+    allCards.forEach((card) => {
+      const inFilter = filtered.includes(card);
+      const inPage = inFilter && visiblePage.has(card);
+      card.classList.toggle('is-hidden-filter', !inFilter);
+      card.classList.toggle('is-hidden-page', inFilter && !inPage);
+      // Garante que o card apareça mesmo se o observer de scroll-reveal
+      // ainda não tiver disparado (evita cards "invisíveis" ao trocar de página).
+      if (inPage) card.classList.add('is-visible');
+    });
+
+    if (emptyState) emptyState.hidden = filtered.length > 0;
+
+    renderPagination(totalPages);
+    grid.classList.remove('is-transitioning');
+  }, 220);
+}
+
+function renderPagination(totalPages) {
+  const nav = document.getElementById('pagination');
+  if (!nav) return;
+  nav.innerHTML = '';
+  if (totalPages <= 1) return;
+
+  const goTo = (page) => {
+    catalogPage = page;
+    renderProductCatalog();
+    document.getElementById('carnes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const makeBtn = (label, page, { isNav = false, disabled = false, active = false } = {}) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'pagination-btn' + (isNav ? ' pagination-btn--nav' : '') + (active ? ' is-active' : '');
+    btn.textContent = label;
+    btn.setAttribute('aria-label', isNav ? label : `Página ${page}`);
+    if (disabled) btn.disabled = true;
+    else btn.addEventListener('click', () => goTo(page));
+    return btn;
+  };
+
+  nav.appendChild(makeBtn('‹', catalogPage - 1, { isNav: true, disabled: catalogPage === 1 }));
+  for (let i = 1; i <= totalPages; i++) {
+    nav.appendChild(makeBtn(String(i), i, { active: i === catalogPage }));
+  }
+  nav.appendChild(makeBtn('›', catalogPage + 1, { isNav: true, disabled: catalogPage === totalPages }));
 }
 
 /* ---------------------------------------------------------------------
