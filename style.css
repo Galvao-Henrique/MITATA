@@ -44,20 +44,15 @@
 
   --radius: 2px;
 
-  /* =============================================================
-     CONTROLE DA LOGO DO HEADER
-     Mexa só nestas variáveis para ajustar a logo. O header NUNCA
-     muda de tamanho, porque a altura dele é fixa (--header-h) e
-     a logo tem "permissão" pra vazar pra fora dessa altura.
-     ============================================================= */
   --header-h: 92px;           /* altura fixa do header (topo, sem scroll) */
   --header-h-scrolled: 75px;  /* altura fixa do header depois de rolar a página */
 
-  --logo-height: 100px;       /* aumente/diminua o TAMANHO da logo aqui */
-  --logo-max-width: 220px;    /* limite de largura, pra logo não esticar demais */
+  --logo-height: 45px;        /* aumente/diminua o TAMANHO da logo aqui */
+  --logo-max-width: 190px;    /* limite de largura, pra logo não esticar demais */
 
   --logo-offset-x: 0px;       /* move a logo pros LADOS: negativo = esquerda, positivo = direita */
-  --logo-offset-y: 30px;       /* move a logo pra CIMA/BAIXO: negativo = cima, positivo = baixo */
+  --logo-offset-y: 0px;       /* move a logo pra CIMA/BAIXO — o header só tem 75-92px de altura,
+                                  então mantenha esse valor pequeno (entre -8px e 8px) */
 }
 
 /* ==========================================================================
@@ -180,8 +175,6 @@ h1, h2, h3, h4 {
 }
 .logo__mark { width: 18px; height: 18px; color: var(--gold); }
 
-/* A logo usa as variáveis lá no topo (:root). Não precisa editar nada aqui —
-   basta mudar --logo-height / --logo-max-width / --logo-offset-x / --logo-offset-y. */
 .logo__img {
   max-height: var(--logo-height);
   max-width: var(--logo-max-width);
