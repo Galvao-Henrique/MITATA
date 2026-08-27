@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParallax();
   initProductCatalog();
   initFloatingWhatsapp();
+  initBackToTop();
   initFooterYear();
 });
 
@@ -206,27 +207,56 @@ function initHeroParallax() {
 }
 
 /* ---------------------------------------------------------------------
-   CATÁLOGO DE CORTES — filtro por categoria + paginação
+   CATÁLOGO DE CORTES — filtro por categoria + busca por texto + paginação
    Ajuste PRODUCTS_PER_PAGE para mudar quantos cortes aparecem por página.
    --------------------------------------------------------------------- */
 const PRODUCTS_PER_PAGE = 8;
 let catalogFilter = 'todos';
+let catalogSearch = '';
 let catalogPage = 1;
 
 function initProductCatalog() {
   const buttons = document.querySelectorAll('.filter-btn');
   const grid = document.getElementById('productsGrid');
+  const searchInput = document.getElementById('productSearch');
   if (!grid) return;
+
+  const setFilter = (filterValue) => {
+    catalogFilter = filterValue;
+    catalogPage = 1;
+    buttons.forEach((b) => b.classList.toggle('is-active', b.dataset.filter === filterValue));
+    renderProductCatalog();
+  };
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       if (btn.classList.contains('is-active')) return;
-      buttons.forEach((b) => b.classList.toggle('is-active', b === btn));
-      catalogFilter = btn.dataset.filter;
-      catalogPage = 1;
-      renderProductCatalog();
+      setFilter(btn.dataset.filter);
     });
   });
+
+  // Cards da seção "Categorias" (Bovinos, Suínos, Aves, Linguiças) agora
+  // realmente aplicam o filtro correspondente ao clicar, em vez de só rolar
+  // a página até "Todos".
+  document.querySelectorAll('[data-filter-target]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      setFilter(card.dataset.filterTarget);
+      document.getElementById('carnes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  if (searchInput) {
+    let debounce;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => {
+        catalogSearch = searchInput.value.trim().toLowerCase();
+        catalogPage = 1;
+        renderProductCatalog();
+      }, 180);
+    });
+  }
 
   renderProductCatalog();
 }
@@ -234,12 +264,15 @@ function initProductCatalog() {
 function renderProductCatalog() {
   const grid = document.getElementById('productsGrid');
   const emptyState = document.getElementById('productsEmpty');
+  const countEl = document.getElementById('productsCount');
   if (!grid) return;
 
   const allCards = Array.from(grid.querySelectorAll('.product-card'));
-  const filtered = allCards.filter(
-    (card) => catalogFilter === 'todos' || card.dataset.category === catalogFilter
-  );
+  const filtered = allCards.filter((card) => {
+    const matchesCategory = catalogFilter === 'todos' || card.dataset.category === catalogFilter;
+    const matchesSearch = !catalogSearch || card.textContent.toLowerCase().includes(catalogSearch);
+    return matchesCategory && matchesSearch;
+  });
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PRODUCTS_PER_PAGE));
   if (catalogPage > totalPages) catalogPage = totalPages;
@@ -261,6 +294,11 @@ function renderProductCatalog() {
     });
 
     if (emptyState) emptyState.hidden = filtered.length > 0;
+    if (countEl) {
+      countEl.textContent = filtered.length === allCards.length
+        ? `${filtered.length} cortes disponíveis`
+        : `${filtered.length} de ${allCards.length} cortes`;
+    }
 
     renderPagination(totalPages);
     grid.classList.remove('is-transitioning');
@@ -318,4 +356,19 @@ function initFloatingWhatsapp() {
 function initFooterYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+}
+
+/* ---------------------------------------------------------------------
+   BOTÃO VOLTAR AO TOPO — aparece após rolar a hero (mesmo gatilho do WhatsApp)
+   --------------------------------------------------------------------- */
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  const hero = document.querySelector('.hero');
+  if (!btn || !hero) return;
+
+  const toggle = () => {
+    btn.classList.toggle('is-visible', window.scrollY > hero.offsetHeight * 0.7);
+  };
+  toggle();
+  window.addEventListener('scroll', toggle, { passive: true });
 }

@@ -183,6 +183,7 @@ h1, h2, h3, h4 {
   display: block;
   object-fit: contain;
   transform: translate(var(--logo-offset-x), var(--logo-offset-y));
+  filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.55));
 }
 .footer__brand .logo__img { max-height: 100px; max-width: 190px; }
 
@@ -594,6 +595,54 @@ section { position: relative; }
   border-color: var(--gold);
 }
 
+.catalog-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+.catalog-controls .filters { margin-bottom: 0; }
+
+.product-search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(243, 239, 231, 0.14);
+  border-radius: 30px;
+  color: var(--text-muted);
+  transition: border-color var(--t-fast);
+  min-width: 240px;
+  flex: 0 1 300px;
+}
+.product-search:focus-within { border-color: rgba(201, 164, 92, 0.5); color: var(--gold); }
+.product-search i { font-size: 0.95rem; flex-shrink: 0; }
+.product-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  width: 100%;
+}
+.product-search input::placeholder { color: var(--text-muted); }
+
+.products-count {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.6rem;
+}
+
+@media (max-width: 640px) {
+  .catalog-controls { flex-direction: column; align-items: stretch; }
+  .product-search { flex: 1 1 auto; }
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -624,7 +673,8 @@ section { position: relative; }
 .product-card:hover {
   border-color: rgba(201, 164, 92, 0.5);
   background: var(--bg-card-alt);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px -18px rgba(0, 0, 0, 0.6);
 }
 .product-card:hover::after { transform: scaleX(1); }
 
@@ -968,7 +1018,7 @@ section { position: relative; }
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: var(--bg-card);
+  background: rgba(0, 0, 0, 0.411);
   border: 1px solid var(--gold);
   color: var(--gold);
   display: flex;
@@ -984,6 +1034,36 @@ section { position: relative; }
 }
 .float-whatsapp.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .float-whatsapp:hover { background: var(--gold); color: var(--brown-deep); }
+
+/* ==========================================================================
+   BOTÃO VOLTAR AO TOPO — mesmo padrão do WhatsApp flutuante, no canto oposto
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 1.8rem;
+  left: 1.8rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(208, 165, 87, 0.45);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  z-index: 190;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity var(--t-fast), transform var(--t-fast), visibility var(--t-fast), background var(--t-fast), border-color var(--t-fast);
+  backdrop-filter: blur(6px);
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background: var(--gold); border-color: var(--gold); color: var(--brown-deep); }
+@media (max-width: 640px) {
+  .back-to-top { width: 40px; height: 40px; font-size: 1rem; bottom: 1.2rem; left: 1.2rem; }
+}
 
 /* ==========================================================================
    RESPONSIVIDADE
